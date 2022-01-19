@@ -1,8 +1,11 @@
 from flask import Flask, Response
 from kafka import KafkaConsumer
 
-consumer = KafkaConsumer('my-topic', bootstrap_servers='localhost:9092')
-
+consumer = KafkaConsumer('my-topic', bootstrap_servers='localhost:9092', auto_offset_reset='latest')
+#dummy poll
+consumer.poll()
+#go to end of the stream
+consumer.seek_to_end()
 app = Flask(__name__)
 
 

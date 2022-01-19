@@ -5,7 +5,7 @@ import cv2
 from kafka import KafkaProducer
 from kafka.errors import KafkaError
 
-producer = KafkaProducer(bootstrap_servers='localhost:9092')
+producer = KafkaProducer(bootstrap_servers='10.60.1.15:9092')
 topic = 'my-topic'
 
 
